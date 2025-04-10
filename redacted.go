@@ -63,6 +63,11 @@ func Redact(s string, opts ...Option) string {
 	return New(s, opts...).String()
 }
 
+// The Redacted function is to provide backwards compatibility to the previously documented API
+func Redacted(s string) string {
+	return redact(s, RedactedCharacter, RedactedLength)
+}
+
 // Option type to change the behaviour of a Censor
 type Option func(*Censor)
 
