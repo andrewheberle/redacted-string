@@ -58,7 +58,9 @@ func New(s string, opts ...Option) *Censor {
 	return censor
 }
 
-// Redact can be used to print a redacted string (ie printed as all '********')
+// Redact can be used to print a redacted string (ie printed as all '********').
+//
+// It is also possible to pass options to customise the behaviour of the redaction in the same way as New accepts options.
 func Redact(s string, opts ...Option) string {
 	return New(s, opts...).String()
 }
